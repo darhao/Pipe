@@ -1,4 +1,4 @@
-package cc.darhao.studying.thread;
+package cc.darhao.pipe.thread;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -10,6 +10,7 @@ public class ReadThread extends Thread{
 	
 	public ReadThread(Socket socket) {
 		this.socket = socket;
+		setDaemon(true);
 	}
 
 	

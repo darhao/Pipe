@@ -1,10 +1,10 @@
-package cc.darhao.studying.thread;
+package cc.darhao.pipe.thread;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import cc.darhao.studying.socket.SocketWrapper;
+import cc.darhao.pipe.socket.SocketWrapper;
 
 public class AcceptThread extends Thread{
 
@@ -13,6 +13,7 @@ public class AcceptThread extends Thread{
 	
 	public AcceptThread(ServerSocket serverSocket) {
 		this.serverSocket = serverSocket;
+		setDaemon(true);
 	}
 	
 	

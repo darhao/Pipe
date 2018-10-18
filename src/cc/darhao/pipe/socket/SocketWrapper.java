@@ -1,10 +1,10 @@
-package cc.darhao.studying.socket;
+package cc.darhao.pipe.socket;
 
 import java.io.IOException;
 import java.net.Socket;
 
-import cc.darhao.studying.thread.ReadThread;
-import cc.darhao.studying.thread.WriteThread;
+import cc.darhao.pipe.thread.ReadThread;
+import cc.darhao.pipe.thread.WriteThread;
 
 public class SocketWrapper {
 	

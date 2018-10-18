@@ -1,4 +1,4 @@
-package cc.darhao.studying.thread;
+package cc.darhao.pipe.thread;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -6,17 +6,21 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import cc.darhao.studying.socket.SocketWrapper;
+import cc.darhao.pipe.socket.SocketWrapper;
 
 public class MainThread {
 
+	public static final String VERSION = "1.0.1";
+	
 	private static List<SocketWrapper> wrappers = Collections.synchronizedList(new ArrayList<>());
 	
 	
 	public static void main(String[] args) throws UnknownHostException, IOException {
+		System.out.println("[Version "+ VERSION +"] (c) " + (new Date().getYear() + 1900) + " Mobear Studio");
 		Scanner scanner = new Scanner(System.in);
 		cmdCycle(scanner);
 		scanner.close();
@@ -33,7 +37,7 @@ public class MainThread {
 				case "list":
 					handleListCmd();
 					break;
-				case "listen":
+				case "bind":
 					handleListenCmd(cmdAndParas);
 					break;
 				case "connect":
@@ -75,7 +79,7 @@ public class MainThread {
 		System.out.println("list");
 		System.out.println("    Show all sockets information and state in this program.");
 		System.out.println();
-		System.out.println("listen port");
+		System.out.println("bind port");
 		System.out.println("    port: the port is for listen");
 		System.out.println("    Create a ServerSocket object and start listening connections.");
 		System.out.println();
